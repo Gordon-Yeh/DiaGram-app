@@ -21,11 +21,11 @@ import butterknife.ButterKnife;
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostAdapterViewHolder> {
 
     //Data store
-    List<Post> mPostList;
+    private List<Post> mPostList;
 
-    Context context;
+    private Context context;
 
-    int[] colors = {R.color.colorPrimary};
+    private int[] colors = {R.color.colorPrimary};
 
     //Handling Clicks
     public interface ListItemClickListener {

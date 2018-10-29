@@ -47,12 +47,12 @@ public class FeedFragment extends Fragment implements PostAdapter.ListItemClickL
 
 
     @BindView(R.id.recycler_view_posts)
-    RecyclerView mRecyclerView;
+    public RecyclerView mRecyclerView;
 
     @BindView(R.id.swipe_to_refresh)
-    SwipeRefreshLayout mSwipeRefreshLayout;
+    public SwipeRefreshLayout mSwipeRefreshLayout;
 
-    PostAdapter mPostAdapter;
+    private PostAdapter mPostAdapter;
 
     private String userId;
     private String sessionKey;

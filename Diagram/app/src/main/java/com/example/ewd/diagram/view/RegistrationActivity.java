@@ -29,22 +29,22 @@ import retrofit2.Response;
 public class RegistrationActivity extends AppCompatActivity {
 
     @BindView(R.id.username)
-    EditText usernameEditText;
+    public EditText usernameEditText;
 
     @BindView(R.id.password)
-    EditText passwordEditText;
+    public EditText passwordEditText;
 
     @BindView(R.id.first_name)
-    EditText firstNameEditText;
+    public EditText firstNameEditText;
 
     @BindView(R.id.last_name)
-    EditText lastNameEditText;
+    public EditText lastNameEditText;
 
     @BindView(R.id.access_code)
-    EditText accessCodeEditText;
+    public EditText accessCodeEditText;
 
     @BindView(R.id.sign_up)
-    Button signUpButton;
+    public Button signUpButton;
 
     private String username;
     private String password;
@@ -66,21 +66,17 @@ public class RegistrationActivity extends AppCompatActivity {
 
 
     }
+
     /**
      * Method to setup listener for Login Button
      */
-    void setUpSignUpButton() {
+    public void setUpSignUpButton() {
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                username = usernameEditText.getText().toString();
-                password = passwordEditText.getText().toString();
-                firstName = firstNameEditText.getText().toString();
-                lastName = lastNameEditText.getText().toString();
-                accessCode = accessCodeEditText.getText().toString();
-
+                readEditTexts();
 
                 //Checking if fields are empty
                 if (TextUtils.isEmpty(firstName)) {
@@ -117,7 +113,6 @@ public class RegistrationActivity extends AppCompatActivity {
                 }
 
 
-
                 SignUpCredentials signUpCredentials = new SignUpCredentials();
                 signUpCredentials.setFirstName(firstName);
                 signUpCredentials.setLastName(lastName);
@@ -135,13 +130,8 @@ public class RegistrationActivity extends AppCompatActivity {
                         if (response.isSuccessful()) {
 
                             AuthResponse authResponse = response.body();
+                            goToNAvigationActivity(authResponse.getJwt(), authResponse.getUser().getId());
 
-                            // Going to Navigation Activity
-                            Intent navigationIntent = new Intent(RegistrationActivity.this, NavigationActivity.class);
-                            navigationIntent.putExtra("token", authResponse.getJwt());
-                            navigationIntent.putExtra("userId", authResponse.getUser().getId());
-
-                            startActivity(navigationIntent);
 
                         } else {
 
@@ -171,4 +161,36 @@ public class RegistrationActivity extends AppCompatActivity {
             }
         });
     }
+
+
+    /**
+     * Method that reads editText from the sign up form
+     */
+    public void readEditTexts() {
+
+        username = usernameEditText.getText().toString();
+        password = passwordEditText.getText().toString();
+        firstName = firstNameEditText.getText().toString();
+        lastName = lastNameEditText.getText().toString();
+        accessCode = accessCodeEditText.getText().toString();
+
+
+    }
+    /**
+     * Method that navigates to the navigation Activity
+     *
+     * @param token
+     * @param userId
+     */
+    public void goToNAvigationActivity(String token, String userId) {
+
+        Intent navigationIntent = new Intent(RegistrationActivity.this, NavigationActivity.class);
+        navigationIntent.putExtra("token", token);
+        navigationIntent.putExtra("userId", userId);
+
+        startActivity(navigationIntent);
+
+    }
+
+
 }

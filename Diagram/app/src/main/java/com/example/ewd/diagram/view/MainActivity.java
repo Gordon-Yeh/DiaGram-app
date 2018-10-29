@@ -30,16 +30,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     @BindView(R.id.username)
-    EditText usernameEditText;
+    public EditText usernameEditText;
 
     @BindView(R.id.password)
-    EditText passwordEditText;
+    public EditText passwordEditText;
 
     @BindView(R.id.log_in)
-    Button loginButton;
+    public Button loginButton;
 
     @BindView(R.id.sign_up)
-    TextView signUpTextView;
+    public TextView signUpTextView;
 
     private String username;
     private String password;
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Method to initialize Views
      */
-    void initViews() {
+    public void initViews() {
 
         setUpLoginButton();
         setUpSignUpButton();
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Method to setup listener for Login Button
      */
-    void setUpLoginButton() {
+    public void setUpLoginButton() {
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Method to setup listener for sign up TextView
      */
-    void setUpSignUpButton() {
+    public void setUpSignUpButton() {
 
         signUpTextView.setOnClickListener(new View.OnClickListener() {
             @Override

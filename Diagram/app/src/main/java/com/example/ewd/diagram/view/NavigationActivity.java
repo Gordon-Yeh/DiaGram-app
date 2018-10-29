@@ -18,12 +18,12 @@ import butterknife.ButterKnife;
 public class NavigationActivity extends AppCompatActivity {
 
     @BindView(R.id.navigation)
-    BottomNavigationView navigation;
+    public BottomNavigationView navigation;
 
     @BindView(R.id.viewpager)
-    CustomViewPager viewPager;
+    public CustomViewPager viewPager;
 
-    ViewPagerAdapter viewPagerAdapter;
+    private ViewPagerAdapter viewPagerAdapter;
 
     private String token;
     private String userId;
@@ -53,8 +53,8 @@ public class NavigationActivity extends AppCompatActivity {
 
                     viewPager.setCurrentItem(3);
 
-
                     return true;
+
             }
             return false;
         }
