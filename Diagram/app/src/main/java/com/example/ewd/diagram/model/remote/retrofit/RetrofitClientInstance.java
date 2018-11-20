@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitClientInstance {
 
     private static Retrofit retrofit;
-    private static final String BASE_URL = "http://40.83.209.30";
+    private static final String BASE_URL = "http://diagram.eastus.cloudapp.azure.com";
 
     public static Retrofit getRetrofitInstance() {
         if (retrofit == null) {
