@@ -467,7 +467,7 @@ public class SignUpTests {
         ViewInteraction appCompatEditText4 = onView(
                 allOf(withId(R.id.username),
                         isDisplayed()));
-        appCompatEditText4.perform(replaceText("user23"), closeSoftKeyboard());
+        appCompatEditText4.perform(replaceText("newuser23"), closeSoftKeyboard());
 
 
 
