@@ -1,5 +1,6 @@
 package com.example.ewd.diagram.model.local;
 
+import com.example.ewd.diagram.model.local.entities.User;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -10,7 +11,7 @@ public class AuthResponse {
     private String jwt;
     @SerializedName("user")
     @Expose
-    private UserAuth user;
+    private User user;
 
     public String getJwt() {
         return jwt;
@@ -20,11 +21,11 @@ public class AuthResponse {
         this.jwt = jwt;
     }
 
-    public UserAuth getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(UserAuth user) {
+    public void setUser(User user) {
         this.user = user;
     }
 

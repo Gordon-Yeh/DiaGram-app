@@ -3,19 +3,17 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="7dp"
-    android:layout_marginRight="7dp"
-    android:layout_marginTop="10dp"
 
 
-    android:clickable="true"
-    android:foreground="?android:attr/selectableItemBackground"
 
 
-    card_view:cardElevation="5dp"
 
+   >
 
-    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,9 +25,7 @@
             android:layout_height="40dp"
             android:id="@+id/user_type_image_view"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="12dp"
-
-            />
+            android:layout_marginTop="12dp"/>
 
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -41,47 +37,46 @@
 
 
             <TextView
-                android:id="@+id/title"
+                android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Am I taking the right meds?"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:paddingBottom="5dp"
+                android:text="Doctor"
+                android:textSize="10sp"
+                android:paddingBottom="1dp"
 
 
                 />
 
 
             <!--This View serves as a visual divider between list items-->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/lightGreyBackground"
-                android:layout_marginRight="8dp" />
 
             <TextView
                 android:id="@+id/body"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:paddingTop="5dp"
+
                 android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-
+                android:textColor="@color/colorDarkGrey"
                 android:layout_marginBottom="6dp"
-                android:textSize="10sp" />
+                android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="3dp"
-                android:text="27/11/2018 , 5:00 AM"
-
-                android:textSize="10sp" />
+           />
 
         </LinearLayout>
 
     </LinearLayout>
+
+        <!--This View serves as a visual divider between list items-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightGreyBackground"
+
+             />
+
+
+    </LinearLayout>
+
 
 </android.support.v7.widget.CardView>

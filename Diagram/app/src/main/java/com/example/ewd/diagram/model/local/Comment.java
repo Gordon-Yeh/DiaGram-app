@@ -8,12 +8,18 @@ public class Comment {
     @SerializedName("_id")
     @Expose
     private String id;
+    @SerializedName("userId")
+    @Expose
+    private String userId;
     @SerializedName("userType")
     @Expose
     private String userType;
     @SerializedName("body")
     @Expose
     private String body;
+    @SerializedName("createdAt")
+    @Expose
+    private String createdAt;
 
     public String getId() {
         return id;
@@ -39,4 +45,19 @@ public class Comment {
         this.body = body;
     }
 
+    public String getUserId() {
+        return userId;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 }

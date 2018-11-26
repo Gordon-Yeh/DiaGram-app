@@ -1,10 +1,13 @@
 package com.example.ewd.diagram.model.local;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Post {
+public class Post  {
 
     @SerializedName("_id")
     @Expose
@@ -15,9 +18,15 @@ public class Post {
     @SerializedName("body")
     @Expose
     private String body;
+    @SerializedName("userId")
+    @Expose
+    private String userId;
     @SerializedName("userType")
     @Expose
     private String userType;
+    @SerializedName("createdAt")
+    @Expose
+    private String createdAt;
     @SerializedName("comments")
     @Expose
     private List<Comment> comments = null;
@@ -62,4 +71,19 @@ public class Post {
         this.comments = comments;
     }
 
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 }

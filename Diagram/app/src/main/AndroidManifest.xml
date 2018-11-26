@@ -2,9 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ewd.diagram">
 
-    <!--Internet Permission-->
+    <!-- Internet Permission -->
     <uses-permission android:name="android.permission.INTERNET" />
-
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -18,19 +17,28 @@
         android:roundIcon="@drawable/ic_local_hospital_black_24dp"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.MainActivity"
-               android:theme="@style/AppTheme.NoActionBar"
-            >
+        <activity
+            android:name=".view.MainActivity"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.RegistrationActivity" />
+        <activity
+            android:name=".view.RegistrationActivity"
+            android:noHistory="true" />
         <activity
             android:name=".view.NavigationActivity"
             android:label="@string/title_activity_navigation" />
+        <activity android:name=".view.CommentsActivity"
+            android:label="Comments"/>
+        <activity android:name=".view.EditPatientActivity" />
+        <activity android:name=".view.EditDoctorActivity" />
+        <activity android:name=".view.OtherPatientActivity" />
+        <activity android:name=".view.OtherDoctorActivity"></activity>
     </application>
 
 </manifest>
