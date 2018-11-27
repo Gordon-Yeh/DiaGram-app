@@ -104,7 +104,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentA
         Comment comment = mCommentList.get(position);
         holder.comment = comment;
         holder.bodyTextView.setText(comment.getBody());
-        holder.userNameTextView.setText(comment.getUserType().equals("patient")? "Patient" : "Doctor");
+        holder.userNameTextView.setText(comment.getUserType().equals("patient")? "Patient" : comment.getDocLastName());
 
         //Circular Icon
         int imgIndex;

@@ -12,6 +12,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.ewd.diagram.R;
@@ -47,6 +48,9 @@ public class AddPostFragment extends Fragment {
 
     @BindView(R.id.post)
     public EditText postEditText;
+
+    @BindView(R.id.progressBar)
+    public ProgressBar progressBar;
 
     private String userId;
     private String sessionKey;
@@ -131,12 +135,14 @@ public class AddPostFragment extends Fragment {
                 PostBody postBody = new PostBody(title, post);
                 Call<Post> call = service.addNewPost(token, postBody);
 
+                progressBar.setVisibility(View.VISIBLE);
                 call.enqueue(new Callback<Post>() {
                     @Override
                     public void onResponse(Call<Post> call, Response<Post> response) {
 
                         if (response.isSuccessful()) {
 
+                            progressBar.setVisibility(View.INVISIBLE);
                             Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
                             titleEditText.setText("");
                             postEditText.setText("");
@@ -144,6 +150,7 @@ public class AddPostFragment extends Fragment {
                         } else {
 
                             Toast.makeText(getActivity(), "Post Failed", Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.INVISIBLE);
 
                         }
 
@@ -152,7 +159,8 @@ public class AddPostFragment extends Fragment {
                     @Override
                     public void onFailure(Call<Post> call, Throwable t) {
 
-                        Toast.makeText(getActivity(), "Check your internet connection", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Check your internet connection", Toast.LENGTH_LONG).show();
+                        progressBar.setVisibility(View.INVISIBLE);
 
                     }
                 });

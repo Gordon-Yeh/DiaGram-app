@@ -20,6 +20,9 @@ public class Comment {
     @SerializedName("createdAt")
     @Expose
     private String createdAt;
+    @SerializedName("docLastName")
+    @Expose
+    private String docLastName;
 
     public String getId() {
         return id;
@@ -55,6 +58,14 @@ public class Comment {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getDocLastName() {
+        return docLastName;
+    }
+
+    public void setDocLastName(String docLastName) {
+        this.docLastName = docLastName;
     }
 
     public void setUserId(String userId) {
